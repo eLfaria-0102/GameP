@@ -29,3 +29,16 @@ class Player(pygame.sprite.Sprite):
 
     def change_weapon(self, new_weapon):
         self.weapon = new_weapon
+class Bullet(pygame.sprite.Sprite):
+    def __init__(self, x, y, direction):  # direction là vector chỉ hướng bay
+        super().__init__()
+        self.image = pygame.image.load("assets/bullet.png").convert_alpha()  # Thay "assets/bullet.png" bằng đường dẫn
+        self.rect = self.image.get_rect(center=(x, y))
+        self.speed = 10
+        self.direction = direction
+
+    def update(self):
+        # Di chuyển viên đạn theo hướng direction
+        self.rect.x += self.direction[0] * self.speed
+        self.rect.y += self.direction[1] * self.speed
+        

@@ -1,1 +1,195 @@
-<h1>tiến i</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        #header {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            height: 2.875rem; /* 46px */
+            background-color: black;
+            z-index: 1;
+        }
+
+        #header #nav {
+            display: flex;
+        }
+
+        #header #nav li {
+            display: block;
+            padding: 0.8625rem 1.5rem; /* 13.8px 24px */
+        }
+
+        #header #nav li:hover {
+            cursor: pointer;
+            background-color: #fff;
+        }
+        
+        #header #nav li:hover a {
+            color: #000;
+        }
+
+        #header #nav li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        #home {
+            height: 37.5rem; /* 600px */
+            background-color: grey;
+            position: relative;
+            top: 2.875rem; /* 46px */
+        }
+
+        #home .intro {
+            width: 50rem; /* 800px */
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            top: 1rem; /* 16px */
+            left: 50%;
+            transform: translateX(-50%);
+            align-items: center;
+            text-align: center;
+        }
+
+        #home .intro .logo {
+            width: 3.125rem; /* 50px */
+            height: 3.125rem; /* 50px */
+            background-color: #fff;
+        }
+
+        #home .intro .wrap-title {
+            text-align: center;
+            color: black;
+            background: rgba(255, 255, 255, 0.8); /* Nền trắng mờ */
+            padding: 1.25rem; /* 20px */
+            border-radius: 0.625rem; /* 10px */
+        }
+
+        #app {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 50rem; /* 800px */
+            height: 25rem; /* 400px */
+            background-color: #333;
+        }
+
+        #guide {
+            display: flex;
+            position: relative;
+            top: 2.875rem; /* 46px */
+        }
+
+        #guide .wrap-title {
+            width: 50vw;
+            height: 37.5rem; /* 600px */
+            position: relative;
+            text-align: center;
+        }
+
+        #guide .wrap-title .guideline {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 25rem; /* 400px */
+            height: 25rem; /* 400px */
+            background-color: #777;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5rem; /* 24px */
+        }
+
+        #guide .wrap-gameplay-capture {
+            width: 50vw;
+            height: 37.5rem; /* 600px */
+            position: relative;
+        }
+
+        #guide .wrap-gameplay-capture .gameplay-capture {
+            width: 25rem; /* 400px */
+            height: 25rem; /* 400px */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #333;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="header">
+        <ul id="nav">
+            <li class="home"><a href="#home">HOME</a></li>
+            <li class="guide"><a href="#guide">GUIDE</a></li>
+            <li class="team"><a href="#team">TEAM</a></li>
+        </ul>
+    </div>
+
+    <div id="content">
+        <div id="home">
+            <div class="intro">
+                <div class="logo">Logo</div>
+                <div class="wrap-title">
+                    <h1 class="title">Tiêu đề của bạn tại đây</h1>
+                    <p class="description">Thêm một mô tả</p>
+                </div>
+                <div style="width: 3.125rem; height: 3.125rem;"></div> <!-- Thẻ div này dùng để căn giữa title -->
+            </div>
+
+            <div id="app">
+
+            </div>
+        </div>
+
+        <div id="guide">
+            <div class="wrap-title">
+                <h1 class="title">Tiêu đề của bạn tại đây</h1>
+                <p class="description">Thêm một mô tả</p>
+                <div class="guideline"></div>
+            </div>
+            <div class="wrap-gameplay-capture">
+                <div class="gameplay-capture">GAMEPLAY CAPTURE</div>
+            </div>
+        </div>
+
+        <div id="team">
+
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#header #nav .home').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/index.html';
+        })
+        document.querySelector('#header #nav .guide').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/index.html#guide';
+        })
+        document.querySelector('#header #nav .team').addEventListener('click', function() {
+            window.location.href = 'http://127.0.0.1:5500/index.html#team';
+        })
+    </script>
+</body>
+</html>
